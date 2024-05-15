@@ -1,0 +1,27 @@
+@import "../../sass/variables.scss";
+
+#products {
+    margin-top: $base-bottom-and-top-margin * 5;
+
+    .products-context-container {
+        padding: 0 10px;
+        > * {
+            margin-bottom: $base-bottom-and-top-margin;
+        }
+
+        .page-title {
+            font-weight: 500;
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: $base-bottom-and-top-margin * 2;
+        }
+
+        .about-products-heading {
+            font-size: 22px;
+            color: $primary-color;
+        }
+        .about-products-text {
+            text-align: justify;
+        }
+    }
+}

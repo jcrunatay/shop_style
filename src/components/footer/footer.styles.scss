@@ -1,0 +1,24 @@
+@import "../../sass/variables.scss";
+footer {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: rgba(89, 195, 195, 0.25);
+    padding: 20px 10px;
+    justify-content: space-between;
+    margin-top: $base-bottom-and-top-margin * 3;
+
+    .footer-logo-container {
+        width: 100px;
+        .shop-style-logo {
+            width: 100%;
+        }
+    }
+
+    p {
+        font-size: $base-font-size - 2;
+        text-align: center;
+    }
+}

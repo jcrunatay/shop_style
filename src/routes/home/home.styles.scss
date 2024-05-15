@@ -1,0 +1,35 @@
+@import "../../sass/variables.scss";
+
+.homepage {
+    margin-top: $base-bottom-and-top-margin * 5;
+
+    .homepage-intro-container {
+        padding: 0 10px;
+
+        > * {
+            margin-bottom: $base-bottom-and-top-margin;
+        }
+
+        .intro-title {
+            color: $primary-color;
+            font-size: 22px;
+            font-weight: 900;
+            margin-top: $base-bottom-and-top-margin;
+        }
+        .intro-text {
+            text-align: justify;
+            margin-bottom: $base-bottom-and-top-margin * 2;
+        }
+
+        .shop-now-button {
+            border: 2px solid $primary-color;
+            padding: 10px 20px;
+            margin-bottom: $base-bottom-and-top-margin * 2;
+            /* transition: all 0.35s ease-out; */
+
+            &:hover {
+                background-color: $primary-color;
+            }
+        }
+    }
+}

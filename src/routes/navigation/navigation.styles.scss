@@ -1,0 +1,65 @@
+@import "../../sass/variables.scss";
+
+%nav-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    background-color: white;
+    width: 100%;
+    z-index: 100;
+    box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.5);
+
+    .nav-content {
+        padding: 15px 10px;
+        display: flex;
+        align-items: center;
+
+        .logo-container {
+            width: 78px;
+            .shop-style-logo {
+                width: 100%;
+            }
+        }
+
+        .nav-links-container {
+            padding: 3px 0;
+            border-bottom: 2px solid $primary-color;
+            border-top: 2px solid $primary-color;
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .nav-link {
+                .account-icon {
+                    margin-right: 5px;
+                    width: 18px;
+                    height: 18px;
+                    transform: translateY(-5.5%);
+                }
+
+                .shopping-bag-icon {
+                    @extend %nav-icon;
+                }
+            }
+
+            button {
+                border: 0;
+                outline: none;
+                background-color: transparent;
+                cursor: pointer;
+                .harmburger-menu-icon {
+                    @extend %nav-icon;
+                    transform: translateY(8%);
+                    pointer-events: none;
+                }
+            }
+        }
+    }
+}

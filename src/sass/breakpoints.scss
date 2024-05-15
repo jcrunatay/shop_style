@@ -1,0 +1,14 @@
+// Define breakpoints as variables
+$xsmall: 450px;
+$small: 640px;
+$medium: 768px;
+$large: 1024px;
+$extra-large: 1280px;
+$extra-extra-large: 1536px;
+
+// Create a mixin for media queries
+@mixin respond-to($breakpoint) {
+    @media only screen and (min-width: $breakpoint) {
+        @content;
+    }
+}

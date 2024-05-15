@@ -1,0 +1,53 @@
+@import "../../sass/variables.scss";
+
+#about-us-section {
+    margin-top: $base-bottom-and-top-margin * 5;
+
+    .page-title {
+        font-weight: 500;
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .about-us-content-container {
+        > * {
+            margin: $base-bottom-and-top-margin * 2 0;
+        }
+
+        .about-image-container {
+            .about-image {
+                width: 100%;
+                max-width: 575px;
+                object-fit: cover;
+            }
+        }
+
+        .about-us-context {
+            padding: 0 15px;
+
+            > * {
+                margin-bottom: $base-bottom-and-top-margin;
+            }
+
+            .about-us-heading {
+                font-size: 22px;
+                color: $primary-color;
+            }
+
+            .about-us-description {
+                text-align: justify;
+            }
+        }
+
+        a {
+            text-decoration: underline;
+            font-size: 20px;
+            padding: 0 10px;
+
+            .right-arrow {
+                color: $primary-color;
+                font-size: 30px;
+            }
+        }
+    }
+}
