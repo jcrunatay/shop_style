@@ -1,35 +1,104 @@
 @import "../../sass/variables.scss";
 
+%intro-title {
+    color: $primary-color;
+    font-size: 22px;
+    font-weight: 900;
+    @include respond-to($extra-large) {
+        font-size: 32px;
+    }
+}
+
+%intro-text {
+    text-align: justify;
+    margin-bottom: $base-bottom-and-top-margin * 2;
+    color: #fff;
+    width: 500px;
+}
+
+%shop-now-button {
+    border: 2px solid $primary-color;
+    padding: 10px 20px;
+    margin-bottom: $base-bottom-and-top-margin * 2;
+    /* transition: all 0.35s ease-out; */
+
+    &:hover {
+        background-color: $primary-color;
+    }
+}
+
 .homepage {
     margin-top: $base-bottom-and-top-margin * 5;
 
+    .video-container {
+        position: relative;
+        border: 1px solid red;
+
+        .intro-context-in-video {
+            display: none;
+            position: absolute;
+            top: 30%;
+            left: 3%;
+            z-index: 999;
+            width: 35%;
+
+            @include respond-to($extra-large) {
+                display: block;
+            }
+
+            > * {
+                margin-bottom: $base-bottom-and-top-margin;
+            }
+
+            .intro-title {
+                @extend %intro-title;
+            }
+            .intro-text {
+                @extend %intro-text;
+            }
+
+            .shop-now-button {
+                color: #fff;
+                @extend %shop-now-button;
+            }
+        }
+
+        video {
+            filter: brightness(75%);
+            @include respond-to($extra-extra-large) {
+                height: 89.5vh;
+                object-fit: cover;
+            }
+        }
+    }
+
     .homepage-intro-container {
-        padding: 0 10px;
+        padding: $content-left-right-padding;
+        display: block;
+
+        @include respond-to($medium) {
+            padding: $content-left-right-padding-double;
+        }
+
+        @include respond-to($extra-large) {
+            display: none;
+        }
 
         > * {
             margin-bottom: $base-bottom-and-top-margin;
         }
 
         .intro-title {
-            color: $primary-color;
-            font-size: 22px;
-            font-weight: 900;
-            margin-top: $base-bottom-and-top-margin;
+            @extend %intro-title;
         }
         .intro-text {
-            text-align: justify;
-            margin-bottom: $base-bottom-and-top-margin * 2;
+            color: #000;
+            width: auto;
+            @extend %intro-text;
         }
 
         .shop-now-button {
-            border: 2px solid $primary-color;
-            padding: 10px 20px;
-            margin-bottom: $base-bottom-and-top-margin * 2;
-            /* transition: all 0.35s ease-out; */
-
-            &:hover {
-                background-color: $primary-color;
-            }
+            @extend %shop-now-button;
         }
     }
 }
