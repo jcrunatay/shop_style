@@ -48,16 +48,35 @@
     &:active {
         filter: brightness(120%);
     }
+
+    @include respond-to($large) {
+        .collection-description {
+            height: 0;
+            opacity: 0;
+        }
+
+        &:hover {
+            .collection-description {
+                height: 70px;
+                opacity: 1;
+            }
+        }
+    }
 }
 
 #collections {
     margin-top: 50px;
+
+    @include respond-to($large) {
+        display: none;
+    }
 
     .collections-title {
         font-size: 22px;
         font-family: "Inter", sans-serif;
         margin-bottom: $base-bottom-and-top-margin * 2;
         text-align: center;
+        padding: 0 10px;
     }
     .collection-container {
         padding: 0 15px;
@@ -71,14 +90,13 @@
             grid-template-columns: 50% 50%;
         }
 
-        @include respond-to($large) {
+        @include respond-to($extra-large) {
             grid-template-columns: 550px 550px;
         }
 
         .collection-link {
             width: 100%;
             height: 230px;
-            max-width: 550px;
 
             @include respond-to($xsmall) {
                 height: 300px;
@@ -86,6 +104,9 @@
 
             @include respond-to($large) {
                 height: 400px;
+            }
+            @include respond-to($extra-large) {
+                max-width: 550px;
             }
 
             .collection1 {
