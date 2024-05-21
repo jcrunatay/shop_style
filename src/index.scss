@@ -7,7 +7,7 @@
 html {
     position: relative;
     min-height: 100vh;
-    padding-bottom: $base-bottom-and-top-margin * 8;
+    padding-bottom: $base-bottom-and-top-margin * 7;
 }
 
 body {
@@ -15,6 +15,10 @@ body {
     -moz-osx-font-smoothing: grayscale;
     font-family: $primary-font-family;
     font-size: $base-font-size;
+
+    @include respond-to($large) {
+        font-size: $medium-font-size;
+    }
 }
 
 * {
