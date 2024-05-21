@@ -29,10 +29,10 @@ const About = () => {
                         stylish and innovative.
                     </p>
                 </div>
-                <Link to="/products">
-                    Dive into Our Collection <span className="right-arrow">→</span>{" "}
-                </Link>
             </div>
+            <Link to="/products">
+                Dive into Our Collection <span className="right-arrow">→</span>{" "}
+            </Link>
         </section>
     );
 };
