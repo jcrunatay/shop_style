@@ -1,10 +1,12 @@
 @import "../../sass/variables.scss";
+@import "../../sass/breakpoints.scss";
 
 #products {
     margin-top: $base-bottom-and-top-margin * 5;
 
     .products-context-container {
-        padding: 0 10px;
+        padding: $content-left-right-padding;
+
         > * {
             margin-bottom: $base-bottom-and-top-margin;
         }
