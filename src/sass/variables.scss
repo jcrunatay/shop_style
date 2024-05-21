@@ -1,5 +1,10 @@
+@import "./breakpoints.scss";
+
 $primary-color: #59c3c3;
 $base-bottom-and-top-margin: 20px;
 $primary-font-family: "Inter", sans-serif;
 $secondary-font-family: "Livvic", sans-serif;
 $base-font-size: 14px;
+$medium-font-size: 16px;
+$content-left-right-padding: 0 2.67%;
+$content-left-right-padding-double: 0 2.67% * 2;
