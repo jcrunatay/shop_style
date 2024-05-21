@@ -17,7 +17,7 @@ nav {
     -moz-box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.5);
 
     .nav-content {
-        padding: 15px 10px;
+        padding: 15px 2.67%;
         display: flex;
         align-items: center;
 
@@ -28,7 +28,7 @@ nav {
             }
         }
 
-        .nav-links-container {
+        .nav-menu-container {
             padding: 3px 0;
             border-bottom: 2px solid $primary-color;
             border-top: 2px solid $primary-color;
@@ -36,7 +36,40 @@ nav {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            .nav-link {
+
+            .nav-links-container {
+                list-style: none;
+                justify-content: center;
+                align-items: center;
+                display: none;
+
+                @include respond-to($medium) {
+                    display: flex;
+                }
+
+                .nav-link {
+                    padding: 0 10px;
+                    font-size: $base-font-size;
+                    margin: 0 10px;
+
+                    a {
+                        transition: all 0.2s ease-out;
+
+                        &:hover,
+                        &:active {
+                            color: $primary-color;
+                        }
+                    }
+                }
+            }
+
+            .hamburger-menu-icon-container {
+                @include respond-to($medium) {
+                    display: none;
+                }
+            }
+
+            .hamburger-menu-link {
                 .account-icon {
                     margin-right: 5px;
                     width: 18px;
