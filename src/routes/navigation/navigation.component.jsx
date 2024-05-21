@@ -29,17 +29,36 @@ const Navigation = () => {
                     <a href="/" className="logo-container">
                         <ShopStyleLogo className="shop-style-logo" />
                     </a>
-                    <div className="nav-links-container">
+                    <div className="nav-menu-container">
                         <div></div>
+
+                        <ul className="nav-links-container">
+                            <li className="nav-link">
+                                <Link to="/">HOME</Link>
+                            </li>
+                            <li className="nav-link">
+                                <Link to="/about">ABOUT US</Link>
+                            </li>
+                            <li className="nav-link">
+                                <Link to="/products">PRODUCTS</Link>
+                            </li>
+                            <li className="nav-link">
+                                <Link to="/contact">CONTACT</Link>
+                            </li>
+                        </ul>
+
                         <div>
-                            <Link to="/products" className="nav-link">
+                            <Link to="/products" className="hamburger-menu-link">
                                 <Account className="account-icon" />
                             </Link>
-                            <Link to="/about" className="nav-link">
+                            <Link to="/about" className="hamburger-menu-link">
                                 <ShoppingBag className="shopping-bag-icon" />
                             </Link>
                         </div>
-                        <button onClick={toggleMobileMenu}>
+                        <button
+                            onClick={toggleMobileMenu}
+                            className="hamburger-menu-icon-container"
+                        >
                             <MobileHamrugerMenu className="harmburger-menu-icon" />
                         </button>
                     </div>
