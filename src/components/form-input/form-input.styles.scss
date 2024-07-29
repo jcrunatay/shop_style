@@ -1,0 +1,13 @@
+@import "./../../sass/variables.scss";
+label {
+    margin-bottom: calc($base-bottom-and-top-margin / 2);
+}
+
+input {
+    margin-bottom: $base-bottom-and-top-margin;
+    height: 30px;
+    border: 0;
+    border-bottom: 2px solid $primary-color;
+    outline: none;
+    font-size: inherit;
+}
