@@ -1,3 +1,4 @@
+import ContactForm from "../../components/contact-form/contact-form.component";
 import "./contact.styles.scss";
 
 const Contact = () => {
@@ -23,25 +24,11 @@ const Contact = () => {
                 <iframe
                     title="ShopStype Location"
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d179013.0796612294!2d-73.66107245239793!3d45.488346431138254!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc91a541c64b70d%3A0x654e3138211fefef!2sMontreal%2C%20QC!5e0!3m2!1sen!2sca!4v1715789828132!5m2!1sen!2sca"
-                    frameborder="0"
-                    referrerpolicy="no-referrer-when-downgrade"
+                    frameBorder="0"
+                    referrerPolicy="no-referrer-when-downgrade"
                     className="map"
                 ></iframe>
-                <form action="">
-                    <div className="inputs-container">
-                        <label htmlFor="name">Name</label>
-                        <input type="text" name="name" autocomplete="off" />
-                        <label htmlFor="email">Email</label>
-                        <input type="text" name="email" autocomplete="off" />
-                        <label htmlFor="subject">Subject</label>
-                        <input type="text" name="subject" autocomplete="off" />
-                    </div>
-                    <div className="inputs-container">
-                        <label htmlFor="message">Message</label>
-                        <textarea name="message"></textarea>
-                    </div>
-                    <button type="submit">Submit</button>
-                </form>
+                <ContactForm />
             </div>
         </section>
     );
