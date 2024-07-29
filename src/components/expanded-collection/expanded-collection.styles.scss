@@ -1,0 +1,99 @@
+@import "../../sass/variables";
+@import "../../sass/breakpoints";
+
+%category-title {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 30px;
+    font-family: $secondary-font-family;
+    font-weight: 300;
+    font-style: italic;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+@mixin collection($background-image) {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    background: $background-image no-repeat center;
+    background-size: cover;
+    position: relative;
+
+    &:hover {
+        .expanded-collection-category-title,
+        .collection-category-description {
+            display: block;
+        }
+
+        .vertical-collection-category-title {
+            display: none;
+        }
+    }
+
+    .expanded-collection-category-title {
+        text-wrap: nowrap;
+        display: none;
+        @extend %category-title;
+    }
+
+    .vertical-collection-category-title {
+        writing-mode: vertical-lr;
+        text-orientation: upright;
+        @extend %category-title;
+
+        span {
+            display: inline-block;
+            transform: translateY(30%);
+        }
+    }
+
+    .collection-category-description {
+        display: none;
+        max-height: 100px;
+        text-align: justify;
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+        font-size: $base-font-size - 2;
+        width: 100%;
+        background-color: rgb(255, 255, 255, 0.8);
+        font-weight: 500;
+        color: black;
+        height: auto;
+        height: 70px;
+        overflow: hidden;
+        transition: all 0.5s ease-out;
+        padding: 10px;
+        border-bottom-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
+}
+
+.collection-category-link {
+    flex: 1 1 0;
+    height: 600px;
+    transition: all 0.5s ease-out;
+
+    &:hover {
+        flex-grow: 4;
+    }
+
+    .collection1 {
+        @include collection(url("../../assets/womens_clothing.png"));
+    }
+
+    .collection2 {
+        @include collection(url("../../assets/mens_clothing.png"));
+    }
+
+    .collection3 {
+        @include collection(url("../../assets/jewelry.png"));
+    }
+    .collection4 {
+        @include collection(url("../../assets/electronics.png"));
+    }
+}
