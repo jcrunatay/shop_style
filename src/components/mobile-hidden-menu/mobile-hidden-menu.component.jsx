@@ -48,7 +48,7 @@ const MobileMenu = ({ toggleMobileMenu, isMobileMenuOpen }) => {
                         </Link>
                     </li>
                     <li className="mobile-menu-item">
-                        <Link href="/contact" className="mobile-menu-item-link">
+                        <Link to="/contact" className="mobile-menu-item-link">
                             CONTACT
                         </Link>
                     </li>
