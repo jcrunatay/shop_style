@@ -1,0 +1,55 @@
+@import "./../../sass/breakpoints.scss";
+@import "./../../sass/variables.scss";
+
+.checkout-item {
+    display: flex;
+    border-bottom: 1px solid #000;
+    padding: 20px 0;
+
+    .checkout-item-image-container {
+        width: 40%;
+        .product-image {
+            width: 100%;
+            max-height: 180px;
+        }
+    }
+
+    .checkout-item-info {
+        padding: $content-left-right-padding;
+
+        > * {
+            margin-bottom: $base-bottom-and-top-margin;
+        }
+
+        .price-quantity-container,
+        .total-remove-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-right: 20%;
+
+            .less {
+                display: inline-block;
+                margin-right: 3px;
+            }
+
+            .less,
+            .add,
+            .quantity {
+                font-weight: 600;
+                margin-left: 5px;
+            }
+
+            .remove {
+                font-weight: 700;
+                font-size: 20px;
+            }
+
+            .less,
+            .add,
+            .remove {
+                cursor: pointer;
+            }
+        }
+    }
+}
