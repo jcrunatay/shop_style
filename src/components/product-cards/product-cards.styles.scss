@@ -1,0 +1,33 @@
+@import "../../sass/breakpoints.scss";
+@import "../../sass/variables.scss";
+
+#single-collection-products {
+    margin-top: $base-bottom-and-top-margin * 5;
+
+    .collection-name {
+        font-weight: 500;
+        font-size: 24px;
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: $base-bottom-and-top-margin * 2;
+    }
+
+    .cards-container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        justify-items: center;
+        gap: 20px;
+        padding: 2%;
+        max-width: 1200px;
+        margin: auto;
+        justify-content: center;
+
+        @include respond-to($small) {
+            grid-template-columns: repeat(2, 300px);
+        }
+
+        @include respond-to($large) {
+            grid-template-columns: repeat(3, 300px);
+        }
+    }
+}
