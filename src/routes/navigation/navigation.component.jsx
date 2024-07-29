@@ -1,18 +1,28 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Outlet, Link } from "react-router-dom";
 
-import MobileMenu from "../../components/mobile-hidden-menu/mobile-hidden-menu.component";
-import Footer from "../../components/footer/footer.component";
+import { signOutUser } from "../../utils/firebase/firebase";
+import { UserContext } from "../../context/user.context";
+import { CartContext } from "../../context/cart.context";
 
 import { ReactComponent as ShopStyleLogo } from "../../assets/logo-in-svg.svg";
 import { ReactComponent as Account } from "../../assets/account.svg";
 import { ReactComponent as ShoppingBag } from "../../assets/shopping-bag.svg";
 import { ReactComponent as MobileHamrugerMenu } from "../../assets/hamburger-menu.svg";
 
+import MobileMenu from "../../components/mobile-hidden-menu/mobile-hidden-menu.component";
+import Footer from "../../components/footer/footer.component";
 import "./navigation.styles.scss";
 
 const Navigation = () => {
+    const { currentUser } = useContext(UserContext);
+    const { cartItemCount } = useContext(CartContext);
+
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+    const signOutHandler = async () => {
+        await signOutUser();
+    };
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -47,12 +57,22 @@ const Navigation = () => {
                             </li>
                         </ul>
 
-                        <div>
-                            <Link to="/products" className="hamburger-menu-link">
-                                <Account className="account-icon" />
-                            </Link>
-                            <Link to="/about" className="hamburger-menu-link">
+                        <div className="nav-icon-links-container">
+                            {!currentUser ? (
+                                <Link to="/auth/signin" className="nav-icon-link">
+                                    <Account className="account-icon" />
+                                </Link>
+                            ) : (
+                                <button onClick={signOutHandler} className="sign-out-btn">
+                                    SIGN OUT
+                                </button>
+                            )}
+
+                            <Link to="/checkout" className="nav-icon-link">
                                 <ShoppingBag className="shopping-bag-icon" />
+                                <span className="checkout-items-counter-container">
+                                    <span className="checkout-items-counter">{cartItemCount}</span>
+                                </span>
                             </Link>
                         </div>
                         <button
