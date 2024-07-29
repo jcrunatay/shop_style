@@ -1,0 +1,8 @@
+@import "./../../sass/breakpoints.scss";
+@import "./../../sass/variables.scss";
+
+.checkout-items-container-mobile {
+    @include respond-to($small) {
+        display: none;
+    }
+}
