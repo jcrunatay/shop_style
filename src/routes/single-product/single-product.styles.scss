@@ -1,0 +1,103 @@
+@import "./../../sass/variables.scss";
+@import "./../../sass/breakpoints.scss";
+
+#single-product-page {
+    margin-top: $base-bottom-and-top-margin * 5;
+
+    > * {
+        margin-bottom: $base-bottom-and-top-margin * 2;
+    }
+
+    .product-title {
+        text-align: center;
+    }
+
+    .product-content {
+        padding: $content-left-right-padding;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+
+        @include respond-to($medium) {
+            flex-direction: row;
+            padding: 0;
+        }
+
+        @include respond-to($large) {
+            max-width: 1000px;
+        }
+
+        > * {
+            margin-bottom: $base-bottom-and-top-margin;
+        }
+
+        .product-image-container {
+            text-align: center;
+            img {
+                width: clamp(280px, 100%, 340px);
+                height: 250px;
+
+                @include respond-to($medium) {
+                    height: 100%;
+                    max-height: 400px;
+                }
+            }
+
+            @include respond-to($medium) {
+                width: 40%;
+            }
+        }
+
+        .product-information {
+            @include respond-to($medium) {
+                width: 60%;
+                padding: 20px;
+            }
+            > * {
+                margin-bottom: $base-bottom-and-top-margin;
+            }
+
+            .product-price {
+                font-weight: 600;
+            }
+
+            .add-to-cart-btn {
+                padding: 10px 20px;
+                background-color: transparent;
+                transition: all 0.2s ease-out;
+
+                &:hover,
+                &:active {
+                    background-color: rgba(0, 0, 0, 0.7);
+                    cursor: pointer;
+                    color: #fff;
+                }
+            }
+        }
+    }
+
+    .recommendation-container {
+        margin: auto;
+        padding: 10px;
+        margin-top: $base-bottom-and-top-margin * 5;
+
+        @include respond-to($medium) {
+            max-width: 700px;
+            padding: 0;
+        }
+
+        @include respond-to($large) {
+            max-width: 1000px;
+        }
+
+        h3 {
+            font-size: 22px;
+            font-weight: 400;
+            font-family: inherit;
+        }
+
+        > * {
+            margin-bottom: $base-bottom-and-top-margin * 2;
+        }
+    }
+}

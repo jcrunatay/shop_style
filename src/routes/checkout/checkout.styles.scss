@@ -1,0 +1,72 @@
+@import "../../sass/variables.scss";
+@import "../../sass/breakpoints.scss";
+
+#checkout {
+    margin-top: $base-bottom-and-top-margin * 5;
+
+    .page-title {
+        font-weight: 500;
+        font-size: 24px;
+        text-align: center;
+        margin-bottom: $base-bottom-and-top-margin * 2;
+    }
+
+    .table-container {
+        padding: $content-left-right-padding;
+    }
+
+    .total-container {
+        margin-top: $base-bottom-and-top-margin * 3;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+        padding: $content-left-right-padding-double;
+
+        @include respond-to($small) {
+            flex-direction: row;
+        }
+
+        .purchase-btn {
+            padding: 20px 50px;
+            border: 2px solid $primary-color;
+            transition: all 0.2s ease-out;
+            background-color: transparent;
+            cursor: pointer;
+            font-size: inherit;
+            width: 80%;
+            max-width: 250px;
+
+            &:hover,
+            &:active {
+                background-color: $primary-color;
+            }
+
+            @include respond-to($small) {
+                order: 1;
+            }
+        }
+
+        .order-total {
+            font-size: 20px;
+            margin-bottom: $base-bottom-and-top-margin;
+
+            @include respond-to($small) {
+                order: 2;
+                margin-bottom: 0;
+            }
+
+            @include respond-to($large) {
+                font-size: 26px;
+            }
+        }
+    }
+
+    .empty-cart-text-container {
+        margin-top: 15%;
+        .empty-cart-text {
+            text-align: center;
+            font-size: 25px;
+        }
+    }
+}

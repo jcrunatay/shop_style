@@ -1,0 +1,89 @@
+@import "./../../sass/breakpoints.scss";
+@import "./../../sass/variables.scss";
+
+.sign-up-form-container {
+    position: relative;
+    min-height: 600px;
+    margin-top: $base-bottom-and-top-margin * 5;
+    padding: $content-left-right-padding;
+
+    @include respond-to($small) {
+        min-height: 700px;
+    }
+
+    .sign-up-form {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        height: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: $content-left-right-padding;
+        max-width: 550px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        font-size: inherit;
+
+        @include respond-to($small) {
+            box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.3);
+            -webkit-box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.3);
+            -moz-box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+            border: 1px solid rgba(0, 0, 0, 0.3);
+        }
+
+        h4 {
+            text-align: center;
+            font-size: 22px;
+            font-family: $primary-font-family;
+            font-weight: 500;
+            margin-bottom: $base-bottom-and-top-margin * 2;
+        }
+
+        .sign-up-form-btn {
+            padding: 10px 0;
+            outline: none;
+            background-color: transparent;
+            border: 2px solid $primary-color;
+            font-size: inherit;
+            cursor: pointer;
+            transition: all 0.2s ease-out;
+            margin-top: 20px;
+
+            &:hover,
+            &:active {
+                background-color: $primary-color;
+            }
+        }
+
+        .line-break {
+            margin: $base-bottom-and-top-margin * 2 0;
+        }
+
+        .redirect-user-to-sign-in-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .sign-in-btn-link {
+                padding: 5px 25px;
+                border: 1px solid $primary-color;
+                transition: all 0.2 ease-out;
+
+                &:hover,
+                &:active {
+                    background-color: $primary-color;
+                }
+            }
+        }
+
+        .signup-form-err-msg {
+            color: red;
+            font-size: 10px;
+            transform: translateY(-100%);
+            margin-bottom: $base-bottom-and-top-margin - 10;
+        }
+    }
+}

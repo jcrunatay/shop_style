@@ -11,7 +11,7 @@ nav {
     top: 0;
     background-color: white;
     width: 100%;
-    z-index: 100;
+    z-index: 1000;
     box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.5);
     -webkit-box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.5);
     -moz-box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.5);
@@ -22,14 +22,14 @@ nav {
         align-items: center;
 
         .logo-container {
-            width: 78px;
+            width: 83px;
             .shop-style-logo {
                 width: 100%;
             }
         }
 
         .nav-menu-container {
-            padding: 3px 0;
+            padding: 7px 0;
             border-bottom: 2px solid $primary-color;
             border-top: 2px solid $primary-color;
             flex-grow: 1;
@@ -69,27 +69,64 @@ nav {
                 }
             }
 
-            .hamburger-menu-link {
-                .account-icon {
-                    margin-right: 5px;
-                    width: 18px;
-                    height: 18px;
-                    transform: translateY(-5.5%);
+            .nav-icon-links-container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .nav-icon-link {
+                    position: relative;
+
+                    .account-icon {
+                        margin-right: 5px;
+                        width: 18px;
+                        height: 18px;
+                    }
+
+                    .shopping-bag-icon {
+                        @extend %nav-icon;
+                    }
+
+                    .checkout-items-counter-container {
+                        position: absolute;
+                        top: -30%;
+                        right: -65%;
+                        width: 25px;
+                        height: 25px;
+                        z-index: 9999;
+                        background-color: #9b9b97;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border-radius: 50%;
+
+                        .checkout-items-counter {
+                            font-size: 10px;
+                        }
+                    }
                 }
 
-                .shopping-bag-icon {
-                    @extend %nav-icon;
+                .sign-out-btn {
+                    border: 0;
+                    outline: none;
+                    background-color: transparent;
+                    cursor: pointer;
+                    margin: 0 10px;
+                    transition: all 0.2s ease-out;
+
+                    &:hover {
+                        color: $primary-color;
+                    }
                 }
             }
 
-            button {
+            .hamburger-menu-icon-container {
                 border: 0;
                 outline: none;
                 background-color: transparent;
                 cursor: pointer;
                 .harmburger-menu-icon {
                     @extend %nav-icon;
-                    transform: translateY(8%);
                     pointer-events: none;
                 }
             }

@@ -1,0 +1,17 @@
+td {
+    border-bottom: 1px solid black;
+    width: calc(100% / 6);
+    text-align: center;
+    padding: 20px 0;
+
+    .product-image {
+        width: 178px;
+        height: 180px;
+    }
+
+    .increase-quantity,
+    .decrease-quantity,
+    .remove-checkout-item {
+        cursor: pointer;
+    }
+}

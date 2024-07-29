@@ -1,0 +1,122 @@
+@import "./../../sass/breakpoints.scss";
+@import "./../../sass/variables.scss";
+
+.sign-in-form-container {
+    position: relative;
+    height: 700px;
+    margin-top: $base-bottom-and-top-margin * 5;
+    padding: $content-left-right-padding;
+
+    .sign-in-form {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        height: 640px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: $content-left-right-padding;
+        max-width: 550px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+
+        @include respond-to($small) {
+            box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.3);
+            -webkit-box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.3);
+            -moz-box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+            border: 1px solid rgba(0, 0, 0, 0.3);
+        }
+
+        h4 {
+            text-align: center;
+            font-size: 22px;
+            font-family: $primary-font-family;
+            font-weight: 500;
+            margin-bottom: $base-bottom-and-top-margin * 2;
+        }
+
+        %sign-in-form-btns {
+            padding: 10px 0;
+            outline: none;
+            background-color: transparent;
+            border: 2px solid $primary-color;
+            font-size: inherit;
+            cursor: pointer;
+            transition: all 0.2s ease-out;
+
+            &:hover,
+            &:active {
+                background-color: $primary-color;
+            }
+        }
+
+        .sign-in-form-btn {
+            margin-top: 20px;
+            @extend %sign-in-form-btns;
+        }
+
+        .or-text {
+            text-align: center;
+            margin: $base-bottom-and-top-margin * 1.5 0;
+        }
+
+        .auth-btn-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            @include respond-to($small) {
+                flex-direction: row;
+                gap: 10px;
+            }
+
+            button {
+                @extend %sign-in-form-btns;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding-left: 10px;
+                padding-right: 10px;
+                width: 100%;
+
+                @include respond-to($small) {
+                    flex: 1 1 0;
+                }
+            }
+
+            .sign-in-with-facebook-btn {
+                margin-bottom: 0;
+            }
+        }
+
+        .line-break {
+            margin: $base-bottom-and-top-margin * 2 0;
+        }
+
+        .redirect-user-to-sign-up-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .sign-up-btn-link {
+                padding: 5px 25px;
+                border: 1px solid $primary-color;
+                transition: all 0.2 ease-out;
+
+                &:hover,
+                &:active {
+                    background-color: $primary-color;
+                }
+            }
+        }
+
+        .signin-err-message {
+            color: red;
+            font-size: 10px;
+            transform: translateY(-100%);
+            margin-bottom: $base-bottom-and-top-margin - 10;
+        }
+    }
+}

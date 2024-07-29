@@ -1,0 +1,23 @@
+@import "./../../sass/breakpoints.scss";
+@import "./../../sass/variables.scss";
+table {
+    border-collapse: collapse;
+    width: 100%;
+    display: none;
+
+    @include respond-to($small) {
+        display: block;
+    }
+
+    th {
+        border-bottom: 1px solid black;
+        width: calc(100% / 6);
+        text-align: center;
+        padding: 20px 0;
+
+        .product-image {
+            width: 178px;
+            height: 180px;
+        }
+    }
+}
