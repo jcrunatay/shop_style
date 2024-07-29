@@ -1,0 +1,49 @@
+@import "./../../sass/variables.scss";
+@import "./../../sass/breakpoints.scss";
+
+.slider-container {
+    margin: auto;
+    border-top: 1px solid rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    padding: 20px 10px;
+    position: relative;
+
+    @include respond-to($medium) {
+        max-width: 700px;
+    }
+
+    @include respond-to($large) {
+        max-width: 1000px;
+    }
+
+    .slick-slide {
+        display: flex;
+        justify-content: center;
+    }
+
+    .slick-dots {
+        bottom: -50px;
+    }
+
+    %arrow {
+        z-index: 100;
+        border: 0;
+        cursor: pointer;
+        outline: none;
+        background-color: transparent;
+        position: absolute;
+        top: 50%;
+    }
+
+    .next-arrow {
+        right: 0;
+        transform: translate(50%, -50%);
+        @extend %arrow;
+    }
+
+    .prev-arrow {
+        left: 0;
+        transform: translate(-50%, -50%);
+        @extend %arrow;
+    }
+}
