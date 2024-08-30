@@ -1,15 +1,28 @@
-import { useContext } from "react";
-import { CartContext } from "../../context/cart.context";
+/* import { useContext } from "react";
+import { CartContext } from "../../context/cart.context"; */
+
+import { useDispatch, useSelector } from "react-redux";
+
+import { selectCartItems } from "../../store/cart/cart.selector";
+
+import {
+    removeItemFromCart,
+    decreaseQuantity,
+    increaseQuantity,
+} from "../../store/cart/cart.action";
+
 import "./mobile-checkout-item.styles.scss";
 
 const MobileCheckoutItem = ({ product }) => {
-    const { removeItemFromCart, decreaseQuantity, increaseQuantity } = useContext(CartContext);
+    const dispatch = useDispatch();
+    const cartItems = useSelector(selectCartItems);
+
     const { title, price, image, quantity } = product;
     const total = (quantity * price).toFixed(2);
 
-    const increaseProductQuantityHandler = () => increaseQuantity(product);
-    const decreaseProductQuantityHandler = () => decreaseQuantity(product);
-    const removeItemFromCartHandler = () => removeItemFromCart(product);
+    const increaseProductQuantityHandler = () => dispatch(increaseQuantity(cartItems, product));
+    const decreaseProductQuantityHandler = () => dispatch(decreaseQuantity(cartItems, product));
+    const removeItemFromCartHandler = () => dispatch(removeItemFromCart(cartItems, product));
 
     return (
         <div className="checkout-item">
