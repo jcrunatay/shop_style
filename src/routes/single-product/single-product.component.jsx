@@ -1,6 +1,9 @@
 import { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
-import { CartContext } from "../../context/cart.context";
+/* import { CartContext } from "../../context/cart.context"; */
+import { useDispatch, useSelector } from "react-redux";
+import { selectCartItems } from "../../store/cart/cart.selector";
+import { addItemToCart } from "../../store/cart/cart.action";
 
 import MultiProductCarousel from "../../components/carousel/carousel.component";
 
@@ -12,8 +15,10 @@ const SingleProduct = () => {
     const [productsByCategory, setProductsByCategory] = useState([]);
     const { title, price, description, image } = product;
 
-    const { addItemToCart } = useContext(CartContext);
-    const addProductToCart = () => addItemToCart(product);
+    const cartItems = useSelector(selectCartItems);
+    const dispatch = useDispatch();
+
+    const addProductToCart = () => dispatch(addItemToCart(cartItems, product));
 
     //get product by id
     useEffect(() => {
