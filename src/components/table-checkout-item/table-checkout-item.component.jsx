@@ -1,16 +1,26 @@
-import { useContext } from "react";
-import { CartContext } from "../../context/cart.context";
+import { useSelector, useDispatch } from "react-redux";
+/* import { UserContext } from "../../context/user.context";
+import { CartContext } from "../../context/cart.context"; */
+
+import {
+    increaseQuantity,
+    decreaseQuantity,
+    removeItemFromCart,
+} from "../../store/cart/cart.action";
+
 import "./table-checkout-item.styles.scss";
+import { selectCartItems } from "../../store/cart/cart.selector";
 
 const TableCheckoutItem = ({ product }) => {
-    const { increaseQuantity, decreaseQuantity, removeItemFromCart } = useContext(CartContext);
+    const dispatch = useDispatch();
+    const cartItems = useSelector(selectCartItems);
 
     const { title, price, image, quantity } = product;
     const total = (quantity * price).toFixed(2);
 
-    const increaseProductQuantityHandler = () => increaseQuantity(product);
-    const decreaseProductQuantityHandler = () => decreaseQuantity(product);
-    const removeItemFromCartHandler = () => removeItemFromCart(product);
+    const increaseProductQuantityHandler = () => dispatch(increaseQuantity(cartItems, product));
+    const decreaseProductQuantityHandler = () => dispatch(decreaseQuantity(cartItems, product));
+    const removeItemFromCartHandler = () => dispatch(removeItemFromCart(cartItems, product));
     return (
         <tr>
             <td>
