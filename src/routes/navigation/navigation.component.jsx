@@ -1,9 +1,13 @@
 import { useState, useEffect, useContext } from "react";
 import { Outlet, Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import { signOutUser } from "../../utils/firebase/firebase";
-import { UserContext } from "../../context/user.context";
-import { CartContext } from "../../context/cart.context";
+/* import { UserContext } from "../../context/user.context";
+import { CartContext } from "../../context/cart.context"; */
+
+import { selectCurrentUser } from "../../store/user/user.selector";
+import { selectCartCount } from "../../store/cart/cart.selector";
 
 import { ReactComponent as ShopStyleLogo } from "../../assets/logo-in-svg.svg";
 import { ReactComponent as Account } from "../../assets/account.svg";
@@ -15,8 +19,8 @@ import Footer from "../../components/footer/footer.component";
 import "./navigation.styles.scss";
 
 const Navigation = () => {
-    const { currentUser } = useContext(UserContext);
-    const { cartItemCount } = useContext(CartContext);
+    const currentUser = useSelector(selectCurrentUser);
+    const cartItemCount = useSelector(selectCartCount);
 
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
