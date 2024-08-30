@@ -1,11 +1,16 @@
 import { useContext, Fragment } from "react";
 import { CartContext } from "../../context/cart.context";
+import { useSelector } from "react-redux";
 
 import TableCheckoutItems from "../../components/table-checkout-items/table-checkout-items.component";
 import MobileCheckoutItems from "../../components/mobile-checkout-items/mobile-checkout-items.component";
 import "./checkout.styles.scss";
+
+import { selectCartTotal, selectCartCount } from "../../store/cart/cart.selector";
+
 const CheckOut = () => {
-    const { orderMainTotal, cartItemCount } = useContext(CartContext);
+    const cartItemCount = useSelector(selectCartCount);
+    const orderMainTotal = useSelector(selectCartTotal);
 
     return (
         <section id="checkout">
