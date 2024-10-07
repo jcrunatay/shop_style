@@ -71,7 +71,6 @@ const SignInForm = () => {
     const onSubmit = async (data) => {
         try {
             const response = await signInAuthUserWithEmailAndPassword(data.email, data.password);
-            console.log("🚀 ~ handleSubmit ~ response:", response);
             reset();
         } catch (error) {
             console.log("user sign in failed", error);
