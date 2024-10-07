@@ -6,21 +6,19 @@ import {
     increaseQuantity,
     decreaseQuantity,
     removeItemFromCart,
-} from "../../store/cart/cart.action";
+} from "../../store/cart/cart.reducer";
 
 import "./table-checkout-item.styles.scss";
-import { selectCartItems } from "../../store/cart/cart.selector";
 
 const TableCheckoutItem = ({ product }) => {
     const dispatch = useDispatch();
-    const cartItems = useSelector(selectCartItems);
 
     const { title, price, image, quantity } = product;
     const total = (quantity * price).toFixed(2);
 
-    const increaseProductQuantityHandler = () => dispatch(increaseQuantity(cartItems, product));
-    const decreaseProductQuantityHandler = () => dispatch(decreaseQuantity(cartItems, product));
-    const removeItemFromCartHandler = () => dispatch(removeItemFromCart(cartItems, product));
+    const increaseProductQuantityHandler = () => dispatch(increaseQuantity(product));
+    const decreaseProductQuantityHandler = () => dispatch(decreaseQuantity(product));
+    const removeItemFromCartHandler = () => dispatch(removeItemFromCart(product));
     return (
         <tr>
             <td>
