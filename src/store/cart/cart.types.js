@@ -1,3 +1,5 @@
+// ==== FILE NO LONGER USED BUT SAVED FOR REFERENCE ====
+
 export const CART_ACTION_TYPES = {
     SET_CART_ITEMS: "cart/SET_CART_ITEMS",
 };
