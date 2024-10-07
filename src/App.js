@@ -12,7 +12,7 @@ import CheckOut from "./routes/checkout/checkout.component";
 import Authentication from "./routes/authentication/authentication.component";
 import ScrollToTop from "./components/scroll-to-top/scroll-to-top";
 
-import { setCurrentUser } from "./store/user/user.action";
+import { setCurrentUser } from "./store/user/user.reducer";
 
 const App = () => {
     const dispatch = useDispatch();
@@ -22,6 +22,11 @@ const App = () => {
             if (user) {
                 createUserDocumentFromAuth(user);
             }
+
+            //i can just get the data that i want so i dont need to disable the checking of non-serializable
+            // const pickedUser = user && (({ accessToken, email }) => ({ accessToken, email }))(user);
+            // dispatch(setCurrentUser(pickedUser));
+
             dispatch(setCurrentUser(user));
         });
 
