@@ -1,3 +1,5 @@
+// ==== FILE NO LONGER USED BUT SAVED FOR REFERENCE ====
+
 import { createContext, useEffect, useReducer } from "react";
 import { onAuthStateChangedListener, createUserDocumentFromAuth } from "../utils/firebase/firebase";
 import { createAction } from "../utils/reducer/reducer.utils";
